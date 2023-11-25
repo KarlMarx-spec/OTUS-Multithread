@@ -22,7 +22,8 @@ namespace MultithreadProject
             Task<long> t3 = Task.Run(() => Compute(3, 6, array.Count));
             Task<long> t4 = Task.Run(() => Compute(4, 6, array.Count));
             Task<long> t5 = Task.Run(() => Compute(5, 6, array.Count));
-            long result = await t0 + await t1 + await t2 + await t3 + await t4 + await t5;
+            Task.WaitAll();
+            long result = t0.Result + t1.Result + t2.Result + t3.Result + t4.Result + t5.Result;
             return result;
         }
 

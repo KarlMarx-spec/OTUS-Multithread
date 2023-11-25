@@ -1,7 +1,7 @@
 ﻿using MultithreadProject;
 using System.Diagnostics;
 
-int iterations = 10000;
+int iterations = 100_000_000;
 var array = new List<long>(iterations);
 long n = 0;
 for (long i = 0; i < iterations; i++)
